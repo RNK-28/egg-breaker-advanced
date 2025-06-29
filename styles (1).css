@@ -1,0 +1,149 @@
+body {
+  background: linear-gradient(135deg, #fae3d9, #e8e4e1);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 30px;
+  color: #333;
+}
+
+.game-container {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.egg {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background: radial-gradient(circle at 50% 40%, #ffffff, #ddd);
+  margin: 20px auto;
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.egg:hover { transform: scale(1.05); }
+
+.egg-shine {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 45px;
+  height: 60px;
+  background: radial-gradient(circle at 20% 20%, #fff8, transparent 70%);
+  border-radius: 50%;
+  animation: shine 2s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
+
+.egg.broken { animation: crack 0.6s forwards; }
+
+@keyframes crack {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.8) rotate(5deg); }
+  100% { transform: scale(0); }
+}
+
+.info-message {
+  font-size: 18px;
+  color: #b74f00;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.primary {
+  background: #ff8a5c;
+  color: white;
+}
+
+button.primary:hover {
+  background: #ff7043;
+}
+
+button:disabled {
+  background: #ccc !important;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.store {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-top: 15px;
+}
+
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.upgrade-grid button {
+  width: 100%;
+  padding: 12px 8px;
+  font-size: 14px;
+}
+
+#apple {
+  margin-top: 30px;
+  animation: appear 1s forwards ease-out;
+}
+
+.apple-core {
+  margin: auto;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at 40px 40px, #d32f2f, #b71c1c);
+  border-radius: 50% 50% 40% 40%;
+  animation: bounce 1.2s infinite ease-in-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.hidden { 
+  display: none; 
+}
+
+#clicks {
+  font-size: 20px;
+  margin-top: 10px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Egg Breaker Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🥚 Break the Egg!</h1>
+
+    <div id="egg" class="egg unbroken"><div class="egg-shine"></div></div>
+
+    <p class="info-message">
+      You need <strong>100,0000 clicks</strong> to break it.<br>
+      And you'll get <strong>a surprise</strong> when you do! 🎁
+    </p>
+
+    <p id="clicks">Clicks: 0 (Spendable: 0)</p>
+
+    <div class="buttons">
+      <button class="primary" onclick="clickEgg()">Click Egg</button>
+      <button onclick="toggleStore()">Store 🛒</button>
+      <button onclick="resetGame()">Reset 🔄</button>
+    </div>
+
+    <div id="store" class="store hidden">
+      <h2>Upgrade Store</h2>
+      <p>Boost your clicking power!</p>
+      
+      <div class="upgrade-grid">
+        <button data-upgrade="hammer" onclick="buyUpgrade('hammer')">🔨 Hammer (50 clicks)</button>
+        <button data-upgrade="smash" onclick="buyUpgrade('smash')">💥 Smash (200 clicks)</button>
+        <button data-upgrade="lazer" onclick="buyUpgrade('lazer')">🔦 Lazer (500 clicks)</button>
+        <button data-upgrade="bomb" onclick="buyUpgrade('bomb')">💣 Bomb (1,500 clicks)</button>
+        <button data-upgrade="bigHammer" onclick="buyUpgrade('bigHammer')">🛠️ Big Hammer (5,000 clicks)</button>
+        <button data-upgrade="ultraSmash" onclick="buyUpgrade('ultraSmash')">⚡ Ultra Smash (10,000 clicks)</button>
+        <button data-upgrade="megaDrill" onclick="buyUpgrade('megaDrill')">🔄 Mega Drill (20,000 clicks)</button>
+        <button data-upgrade="eggTerminator" onclick="buyUpgrade('eggTerminator')">☠️ Egg Terminator (50,000 clicks)</button>
+        <button data-upgrade="cosmicBlast" onclick="buyUpgrade('cosmicBlast')">🌌 Cosmic Blast (100,000 clicks)</button>
+      </div>
+    </div>
+
+    <div id="codeBox" style="margin-top: 20px;">
+      <input type="text" id="codeInput" placeholder="Enter Code">
+      <button onclick="checkCode()">Submit Code</button>
+    </div>
+
+    <div id="apple" class="apple hidden">
+      <div class="apple-core"></div>
+      <h2>🍎 Here's the fruit of your labor!</h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
