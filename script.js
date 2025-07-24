@@ -141,3 +141,8 @@ function resetGame() {
 }
 
 window.onload = loadState;
+    // Check if we should show the intro animation
+    if (!localStorage.getItem('animationShown')) {
+        localStorage.setItem('animationShown', 'true');
+        window.location.href = 'perfectsrnk (1).html';
+    }
